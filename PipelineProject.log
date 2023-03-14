@@ -1,0 +1,39 @@
+Donor 1 (2dpi) had 2259287 read pairs before Bowtie2 filtering and 778847 read pairs after
+Donor 1 (6dpi) had 2004530 read pairs before Bowtie2 filtering and 567014 read pairs after
+Donor 3 (2dpi) had 2730258 read pairs before Bowtie2 filtering and 932657 read pairs after
+Donor 3 (6dpi) had 2476889 read pairs before Bowtie2 filtering and 617925 read pairs after
+
+
+
+
+spades.py -k 77, 99, 127 -t 8 --only-assembler --pe-1 1 /home/nshanbhag/sandbox/PipelineProject_Niru_Shanbhag/bowtie2_output/SRR5660030_mapped_1.fq --pe-2 1 /home/nshanbhag/sandbox/PipelineProject_Niru_Shanbhag/bowtie2_output/SRR5660030_mapped_2.fq --pe-1 2 /home/nshanbhag/sandbox/PipelineProject_Niru_Shanbhag/bowtie2_output/SRR5660033_mapped_1.fq --pe-2 2 /home/nshanbhag/sandbox/PipelineProject_Niru_Shanbhag/bowtie2_output/SRR5660033_mapped_2.fq --pe-1 3 /home/nshanbhag/sandbox/PipelineProject_Niru_Shanbhag/bowtie2_output/SRR5660044_mapped_1.fq --pe-2 3 /home/nshanbhag/sandbox/PipelineProject_Niru_Shanbhag/bowtie2_output/SRR5660044_mapped_2.fq --pe-1 4 /home/nshanbhag/sandbox/PipelineProject_Niru_Shanbhag/bowtie2_output/SRR5660045_mapped_1.fq --pe-2 4 /home/nshanbhag/sandbox/PipelineProject_Niru_Shanbhag/bowtie2_output/SRR5660045_mapped_2.fq -o /home/nshanbhag/sandbox/PipelineProject_Niru_Shanbhag/spades/assembly/
+
+
+
+
+There are 48 contigs > 1000 bp in the assembly.
+There are 165978 bp in the assembly.
+
+
+
+
+# BLASTN 2.13.0+
+# Query: NODE_1_length_18231_cov_335.243316
+# Database: /home/nshanbhag/sandbox/PipelineProject_Niru_Shanbhag/blast/HCMV_db
+# Fields: subject title, % identity, alignment length, q. start, q. end, s. start, s. end, bit score, evalue
+# 10 hits found
+NC_006273.2 Human herpesvirus 5 strain Merlin, complete genome	99.364	18243	1	18231	138262	120020	33035	0.0
+NC_003521.1 Panine herpesvirus 2 strain Heberling, complete genome	83.327	2831	8292	11117	130007	127219	2569	0.0
+NC_033176.1 Cynomolgus cytomegalovirus isolate 31908, complete genome	74.260	2467	8654	11097	118190	115749	994	0.0
+NC_006150.1 Macacine herpesvirus 3, complete genome	74.153	2449	8654	11080	119468	117042	976	0.0
+NC_012783.2 Cercopithecine herpesvirus 5 strain 2715, complete genome	74.112	2507	8648	11122	118447	115975	974	0.0
+NC_027016.1 Papio ursinus cytomegalovirus isolate OCOM4-52, complete genome	81.857	1174	3335	4501	101857	103018	970	0.0
+NC_016154.1 Cynomolgus macaque cytomegalovirus strain Ottawa, complete genome	73.878	2450	8654	11080	113198	110772	937	0.0
+NC_055235.1 Baboon cytomegalovirus OCOM4-37, complete genome, *** SEQUENCING IN PROGRESS ***, 22 unordered pieces	82.742	1043	3335	4374	54185	53148	922	0.0
+NC_016447.1 Aotine herpesvirus 1 strain S34E, complete genome	80.287	1116	3354	4462	119566	118464	824	0.0
+NC_020231.1 Caviid herpesvirus 2 strain 21222, complete genome	73.985	788	6055	6837	143171	142389	311	1.62e-83
+# BLAST processed 1 queries
+
+
+
+

@@ -218,13 +218,14 @@ def blast(main):
     log_file.write("\n")
     
     
+input_reads_path = os.getcwd() + "/trimmed_fastq_files"
+    
 main = os.getcwd() + "/PipelineProject_Niru_Shanbhag"
 
 os.makedirs(main)
 os.chdir(main)
 
 log_file = open(main + "/PipelineProject.log", "w")
-input_reads_path = main + "/trimmed_fastq_reads"
 
 
 build_index(main)
@@ -233,7 +234,3 @@ spades(main)
 blast(main)
 
 log_file.close()
-
-
-
-

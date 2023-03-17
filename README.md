@@ -36,7 +36,7 @@ cd pipeline_project
 ```
 * To ensure that all the files have copied properly to your machine, list the contents of the pipeline_project directory to ensure all files and directories are present
 ```
-ls pipeline_project
+ls 
 ```
 * If all files and directories are present, you may run one of the two following commands. Make sure you are in the main pipeline_project directory, and not in a subdirectory. 
 

@@ -20,6 +20,7 @@ This code was written for and tested in Python 3.8.
 
 ### Packages
 * os
+* argsparse
 * BioPython
 * glob
 * re

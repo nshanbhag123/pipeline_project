@@ -158,12 +158,9 @@ def calc_contigs(main):
     #writing contig information to the log file
     log_file.write("# Summary stats from SPAdes assembly output" + "\n")
     log_file.write("There are " + str(no_contigs) + " contigs > 1000 bp in the assembly." + "\n")
-    
     log_file.write("There are " + str(contig_length) + " bp in the assembly." + "\n")
-    
     log_file.write("\n" + "\n" + "\n" + "\n")
         
-    
     return(longest_contig) #return the longest contig
 
 def blast(main):
@@ -177,15 +174,10 @@ def blast(main):
     HCMV_db = open(main + "/blast/HCMV.fasta", "w")
     
     handle = Entrez.esearch(db = "nucleotide", term = ("Betaherpesvirinae[Organism] OR Betaherpesvirinae[All Fields])"), retmax = 20000) #using esearch to find all the gen bank ids corresponding with betaherpesvirinae
-    
     record = Entrez.read(handle) #reading the handle
-    
     list_of_ids = record["IdList"] #extracting the ids
-    
     handle = Entrez.efetch(db = "nucleotide", id = list_of_ids, rettype = "fasta") #fetching the actual information about the ids from the ids we got from esearch
-    
     records = list(SeqIO.parse(handle, format = "fasta")) #parsing the handle
-    
     
     for record in records: #for each record, write it to the multifasta file for HCMV db
         HCMV_db.write(">" + str(record.description))

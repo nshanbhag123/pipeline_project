@@ -53,6 +53,10 @@ ls pipeline_project
  ```
  If you want to run both commands, clone the repository in different directories so that the results do not get overwritten.
 ### Output Folders
+* To view the contents of pipeline output, make sure to cd into the PipelineProject_Niru_Shanbhag
+```
+cd PipelineProject_Niru_Shanbhag
+```
 * PipelineProject.log
   * Contains a log file with a summary of the bowtie2 output, the complete spades command, and the blast output
 * bowtie2_index

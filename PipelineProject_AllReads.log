@@ -1,0 +1,34 @@
+# Bowtie2 output
+Donor 1 (2dpi) had 2259287 read pairs before Bowtie2 filtering and 1562296 read pairs after
+Donor 1 (6dpi) had 2004530 read pairs before Bowtie2 filtering and 1249472 read pairs after
+Donor 3 (2dpi) had 2730258 read pairs before Bowtie2 filtering and 1922300 read pairs after
+Donor 3 (6dpi) had 2476889 read pairs before Bowtie2 filtering and 1274769 read pairs after
+
+
+
+
+# Spades Assembly 
+/Users/nirushanbhag/Downloads/Software/SPAdes-3.15.4-Darwin/bin/spades.py -k 77, 99, 127 -t 8 --only-assembler --pe-1 1 bowtie2_output/SRR5660030_mapped_1.fq --pe-2 1 bowtie2_output/SRR5660030_mapped_2.fq --pe-1 2 bowtie2_output/SRR5660033_mapped_1.fq --pe-2 2 bowtie2_output/SRR5660033_mapped_2.fq --pe-1 3 bowtie2_output/SRR5660044_mapped_1.fq --pe-2 3 bowtie2_output/SRR5660044_mapped_2.fq --pe-1 4 bowtie2_output/SRR5660045_mapped_1.fq --pe-2 4 bowtie2_output/SRR5660045_mapped_2.fq -o spades/assembly/
+
+
+
+# Summary stats from SPAdes assembly output
+There are 25 contigs > 1000 bp in the assembly.
+There are 198576 bp in the assembly.
+
+
+
+
+# BLAST output
+sacc	pident	length	qstart	qend	sstart	send	bitscore	evalue	stitle
+KF297339.1	100.000	36403	1	36403	51964	88366	67224	0.0	KF297339.1 Human herpesvirus 5 strain TB40/E clone Lisa, complete genome
+EF999921.1	100.000	36403	1	36403	84005	120407	67224	0.0	EF999921.1 Human herpesvirus 5 strain TB40/E clone TB40-BAC4, complete sequence
+MT070140.1	100.000	36403	1	36403	51735	88137	67224	0.0	MT070140.1 UNVERIFIED: Human betaherpesvirus 5 isolate P10 chromosome 1, complete genome
+MW439038.1	100.000	36403	1	36403	51363	87765	67224	0.0	MW439038.1 Human betaherpesvirus 5 strain TB40/EF, complete genome
+MW439039.1	100.000	36403	1	36403	51363	87765	67224	0.0	MW439039.1 Human betaherpesvirus 5 strain TB40/EE, complete genome
+KX544839.1	99.973	36403	1	36403	83988	120382	67161	0.0	KX544839.1 Human betaherpesvirus 5 isolate TB40-E_UNC, complete genome
+MT044484.1	99.959	36403	1	36403	51316	87714	67137	0.0	MT044484.1 Human betaherpesvirus 5 strain HAN-SOT4, complete genome
+KJ361955.1	99.709	36412	1	36403	51269	87679	66644	0.0	KJ361955.1 Human herpesvirus 5 strain HAN33, complete genome
+KP745657.1	99.459	36411	1	36403	51470	87869	66129	0.0	KP745657.1 Human herpesvirus 5 strain BE/13/2011, complete genome
+MT044478.1	99.456	36414	1	36403	51401	87802	66125	0.0	MT044478.1 Human betaherpesvirus 5 strain HAN-SOT1, complete genome
+

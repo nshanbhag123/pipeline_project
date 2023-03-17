@@ -14,7 +14,7 @@ def convert_sra_to_fastq(main):
     os.chdir(main + "/untrimmed_fastqs")
     
     #fastq dump command
-    fastq_dump = "/Users/nirushanbhag/Downloads/Software/sratoolkit.3.0.0-mac64/bin/fastq-dump -I --split-files "
+    fastq_dump = "fastq-dump -I --split-files "
 
     #finding path to sra files
     for sra in glob.glob(main + '/SRAfiles/*'):
@@ -58,7 +58,7 @@ def build_index(main):
     SeqIO.write(records, main + "/bowtie_index" + "/index.fasta", "fasta")
     
     #Using bowtie2-build to create an index out of the index fasta file
-    bowtie_cmd1 = "/Users/nirushanbhag/Downloads/Software/bowtie2-2.2.0/bowtie2-build " + main + "/bowtie_index/index.fasta " + "HCMV"
+    bowtie_cmd1 = "bowtie2-build " + main + "/bowtie_index/index.fasta " + "HCMV"
     
     os.system(bowtie_cmd1)
     
@@ -98,7 +98,7 @@ def bowtie(main, input_reads_path):
         index = main + "/bowtie_index/HCMV"
         
         #running bowtie on the paired end reads
-        bowtie_cmd2 = "/Users/nirushanbhag/Downloads/Software/bowtie2-2.2.0/bowtie2  " + "-x " + index + " -1 " + fastq1 + " -2 " + fastq2 + " -S " + main + "/bowtie2_output/" + SRR_no+ "_map.sam " + "--al-conc " + main + "/bowtie2_output/" + SRR_no + "_mapped_%.fq" 
+        bowtie_cmd2 = "bowtie2  " + "-x " + index + " -1 " + fastq1 + " -2 " + fastq2 + " -S " + main + "/bowtie2_output/" + SRR_no+ "_map.sam " + "--al-conc " + main + "/bowtie2_output/" + SRR_no + "_mapped_%.fq" 
         os.system(bowtie_cmd2)
         
         #changing directories into the output of bowtie
@@ -128,7 +128,7 @@ def spades(main):
     btlist = sorted(btlist)
     
     #paired end spades assembly
-    spades_cmd = "/Users/nirushanbhag/Downloads/Software/SPAdes-3.15.4-Darwin/bin/spades.py " + "-k 77, 99, 127 -t 8 --only-assembler " + "--pe-1 1 " + btlist[0] + " --pe-2 1 " + btlist[1] + " --pe-1 2 " + btlist[2] + " --pe-2 2 " + btlist[3] + " --pe-1 3 " + btlist[4] + " --pe-2 3 " + btlist[5] + " --pe-1 4 " + btlist[6] + " --pe-2 4 " + btlist[7] + " -o " + "spades/" + "assembly/"
+    spades_cmd = "spades.py " + "-k 77, 99, 127 -t 8 --only-assembler " + "--pe-1 1 " + btlist[0] + " --pe-2 1 " + btlist[1] + " --pe-1 2 " + btlist[2] + " --pe-2 2 " + btlist[3] + " --pe-1 3 " + btlist[4] + " --pe-2 3 " + btlist[5] + " --pe-1 4 " + btlist[6] + " --pe-2 4 " + btlist[7] + " -o " + "spades/" + "assembly/"
     
     #writing the spades command to the log file
     log_file.write("# Spades Assembly " + "\n")
@@ -191,7 +191,7 @@ def blast(main):
     output_file = main + "/blast/HCMV_db" #output location and name
     
     #make blast db command
-    makeblastdb = "/Users/nirushanbhag/Downloads/Software/ncbi-blast-2.13.0+/bin/makeblastdb -in " + input_file + " -dbtype nucl " + "-out " + output_file
+    makeblastdb = "makeblastdb -in " + input_file + " -dbtype nucl " + "-out " + output_file
     
     os.system(makeblastdb) #running the makeblastdb command
     
@@ -211,7 +211,7 @@ def blast(main):
     db = main + "/blast/HCMV_db"
     
     #blast n command, with outfmt 6
-    blastn = "/Users/nirushanbhag/Downloads/Software/ncbi-blast-2.13.0+/bin/blastn -query " + input_file + " -db " + db + " -num_threads 4 -max_hsps 1 -max_target_seqs 10 -out " + output_file + " -outfmt '6 sacc pident length qstart qend sstart send bitscore evalue stitle'"
+    blastn = "blastn -query " + input_file + " -db " + db + " -num_threads 4 -max_hsps 1 -max_target_seqs 10 -out " + output_file + " -outfmt '6 sacc pident length qstart qend sstart send bitscore evalue stitle'"
     
     #executing the blastn command
     os.system(blastn)

@@ -24,7 +24,7 @@ This code was written for and tested in Python 3.8.
 * glob
 * re
 
-### Executing pipeline
+### Set Up Environment
 
 * Use the following command to clone this repo to your machine
 ```
@@ -38,10 +38,20 @@ cd pipeline_project
 ```
 ls pipeline_project
 ```
-* If all files and directories are present, run the following command. Make sure you are in the main pipeline_project directory, and not in a subdirectory. This will run the pipeline on the set of trimmed fastq files and output the results to a folder named "PipelineProject_Niru_Shanbhag"
-```
-python3 genome_assembly.py
-```
+* If all files and directories are present, you may run one of the two following commands. Make sure you are in the main pipeline_project directory, and not in a subdirectory. 
+
+
+### Running the pipeline
+* There are two ways you can run pipeline: running on the sample set (trimmed fastq files) and the big data set (untrimmed fastq files). Both output the results to a folder named "PipelineProject_Niru_Shanbhag"
+* Running the big data set
+ ```
+ python3 genome_assembly.py
+ ```
+* Running the sample data
+ ```
+ python3 genome_assembly.py --sample
+ ```
+ If you want to run both commands, clone the repository in different directories so that the results do not get overwritten.
 ### Output Folders
 * PipelineProject.log
   * Contains a log file with a summary of the bowtie2 output, the complete spades command, and the blast output

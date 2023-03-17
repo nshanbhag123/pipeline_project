@@ -37,7 +37,7 @@ def get_files(main):
     donor_list = [donor1, donor12, donor3, donor32]
     
     for k in donor_list: #retreiving the sra files for each donor
-        os.system("/usr/local/bin/wget " + k)
+        os.system("wget " + k)
 
 def SRR_donor(srr_no):
     #function that matches SRR number with Donor Name. Given number, will give you name

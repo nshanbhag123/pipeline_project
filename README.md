@@ -14,6 +14,7 @@ This code was written for and tested in Python 3.8.
 ### Software
 
 * [SRA toolkit](https://github.com/ncbi/sra-tools)
+* [Fastq-dump](https://rnnh.github.io/bioinfo-notebook/docs/fastq-dump.html)
 * [Bowtie2](https://github.com/BenLangmead/bowtie2)
 * [SPAdes](https://github.com/ablab/spades)
 * [BLAST](https://www.ncbi.nlm.nih.gov/books/NBK279690/)

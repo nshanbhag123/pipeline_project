@@ -55,7 +55,7 @@ ls
  ```
  If you want to run both commands, clone the repository in different directories so that the results do not get overwritten.
 ### Output Folders
-* To view the contents of pipeline output, make sure to cd into the PipelineProject_Niru_Shanbhag
+* To view the contents of pipeline output, make sure to cd into the PipelineProject_Niru_Shanbhag directory.
 ```
 cd PipelineProject_Niru_Shanbhag
 ```
